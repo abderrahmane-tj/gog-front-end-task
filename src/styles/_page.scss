@@ -1,0 +1,74 @@
+body {
+  background:
+    url(../imgs/background-pattern.png),
+    linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(212,212,212,0) 100%) no-repeat;
+}
+
+.container {
+  width: 950px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.flex > .item{
+  flex: 1;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 200;
+  color: #404040;
+  text-align: center;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.title strong {
+  font-weight: 400;
+}
+
+.details {
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  color: #333333;
+  font-weight: 200;
+  li {
+    padding: 0 12px;
+  }
+  .highlight {
+    background-color: rgba(0,0,0, 0.03);
+    border-radius: 3px;
+    border: 1px solid #a6a6a6;
+  }
+  .regular {
+    font-weight: 400;
+  }
+}
+
+main {
+  background: #e1e1e1;
+  border-radius: 5px;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.5),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3);;
+}
+
+.games {
+  text-align: center;
+}
+
+.game {
+}
+
+.game:not(:first-child) {
+  margin-left: 25px;
+}
