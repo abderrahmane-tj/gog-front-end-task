@@ -4,19 +4,19 @@ class App extends React.Component {
   render() {
     return (
       <div className="page">
-        <header className="container">
+        <header className="header container">
           <h1 className="title">Pay what you want for <strong>Divinity Bundle</strong> ($32 value!)</h1>
-          <ul className="details flex justify-evenly">
+          <ul className="details flex justify-evenly padding30">
             <li>Support Larian Studios</li>
             <li>PLay Divinity 2: DC before release</li>
             <li>Get DRM-free games with goodies</li>
             <li className="highlight">Only <strong className="regular">23:54:55</strong> left</li>
           </ul>
         </header>
-        <main className="container no-padding">
-          <div className="games">
+        <main className="main container no-padding">
+          <div className="games padding30">
             <div className="flex">
-              <div className="game dd item">
+              <div className="game dd item active">
                 <div className="logo">
                   <img src="" alt=""/>
                 </div>
@@ -25,7 +25,7 @@ class App extends React.Component {
                 </div>
                 <div className="indication active">Below average</div>
               </div>
-              <div className="game bd item">
+              <div className="game bd item active">
                 <div className="logo">
                   <img src="" alt=""/>
                 </div>
@@ -45,7 +45,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <div className="choose-your-price">
+          <div className="choose-your-price padding30">
             <div className="container">
               <div className="slider">
                 <div className="minumum">$0.99</div>

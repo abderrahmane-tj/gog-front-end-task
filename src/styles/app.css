@@ -35,6 +35,9 @@ ul, ol {
 .no-padding {
   padding: 0 !important; }
 
+.padding30 {
+  padding: 0 30px; }
+
 /* fonts */
 /* padding */
 body {
@@ -42,8 +45,7 @@ body {
 
 .container {
   width: 950px;
-  margin: 0 auto;
-  padding: 0 30px; }
+  margin: 0 auto; }
 
 .flex {
   display: flex;
@@ -80,7 +82,8 @@ body {
   .details .regular {
     font-weight: 400; }
 
-main {
+.main {
+  margin-top: 36px;
   background: #e1e1e1;
   border-radius: 5px;
   overflow: hidden;
@@ -108,6 +111,8 @@ main {
   padding: 17px 0; }
   .indication strong {
     font-weight: 600; }
+  .active .indication {
+    color: #608000; }
 
 .description, .indication {
   border-top: 1px solid #cdcdcd; }
