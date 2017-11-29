@@ -46,23 +46,21 @@ class App extends React.Component {
             </div>
           </div>
           <div className="choose-your-price padding30">
-            <div className="container">
-              <div className="slider">
-                <div className="minumum">$0.99</div>
-                <div className="rails">
-                  <div className="handle">
-                    <div className="tooltip">
-                      <div className="bubble">
-                        <div className="input">$14.99</div>
-                        <div className="checkout">Checkout now</div>
-                      </div>
-                      <div className="info"><span className="info-icon"
-                      >Click the price to type it in manually</span></div>
+            <div className="slider">
+              <div className="minumum indicator">$0.99</div>
+              <div className="rails">
+                <div className="handle">
+                  <div className="tooltip">
+                    <div className="bubble">
+                      <div className="input">$14.99</div>
+                      <div className="checkout">Checkout now</div>
                     </div>
+                    <div className="info"><span className="info-icon"
+                    >Click the price to type it in manually</span></div>
                   </div>
                 </div>
-                <div className="maximum">$49.99</div>
               </div>
+              <div className="maximum indicator">$49.99</div>
             </div>
           </div>
         </main>
