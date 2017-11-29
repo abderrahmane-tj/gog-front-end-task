@@ -13,7 +13,7 @@ class App extends React.Component {
             <li className="highlight">Only <strong className="regular">23:54:55</strong> left</li>
           </ul>
         </header>
-        <main className="container">
+        <main className="container no-padding">
           <div className="games">
             <div className="flex">
               <div className="game dd item">
@@ -32,7 +32,7 @@ class App extends React.Component {
                 <div className="description">
                   <p><em>Beyond Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>
                 </div>
-                <div className="indication active">Above average (from $7.67)</div>
+                <div className="indication active">Above average <strong>(from $7.67)</strong></div>
               </div>
               <div className="game d2 item">
                 <div className="logo">
@@ -41,7 +41,7 @@ class App extends React.Component {
                 <div className="description">
                   <p><em>Divinity 2</em> (preorder, normal price $19.99)<br /><strong>with 9 goodies and 7 language versions</strong></p>
                 </div>
-                <div className="indication">Top supporter (from $18.31)</div>
+                <div className="indication">Top supporter <strong>(from $18.31)</strong></div>
               </div>
             </div>
           </div>
