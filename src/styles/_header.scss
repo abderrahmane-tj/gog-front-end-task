@@ -34,3 +34,11 @@
     margin-right: 5px;
   }
 }
+
+.details:before, .detail {
+  margin:0 auto 0 0;
+}
+
+.details:before {
+  content:'';
+}
