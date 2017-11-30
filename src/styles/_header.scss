@@ -1,0 +1,36 @@
+@import "./variables";
+
+.title {
+  font-size: 32px;
+  font-weight: $light;
+  color: #404040;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.title strong {
+  font-weight: $regular;
+}
+
+.details {
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  color: #333333;
+  font-weight: $light;
+  .highlight {
+    background-color: rgba(0,0,0, 0.03);
+    border-radius: 3px;
+    border: 1px solid #a6a6a6;
+    padding: 0 12px;
+  }
+  .regular {
+    font-weight: $regular;
+  }
+  .icon, .text {
+    vertical-align: middle;
+  }
+  .icon {
+    margin-right: 5px;
+  }
+}
