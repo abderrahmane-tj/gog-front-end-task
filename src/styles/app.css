@@ -119,11 +119,16 @@ body {
 
 .indication {
   color: #4c4c4c;
-  padding: 17px 0; }
+  padding: 17px 0;
+  width: 100%; }
   .indication strong {
     font-weight: 600; }
   .active .indication {
     color: #608000; }
+  .indication .icon, .indication .text {
+    vertical-align: middle; }
+  .indication .icon {
+    margin-right: 5px; }
 
 .description, .indication {
   border-top: 1px solid #cdcdcd; }

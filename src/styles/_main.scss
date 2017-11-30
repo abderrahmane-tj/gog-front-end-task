@@ -38,11 +38,18 @@
 .indication {
   color: #4c4c4c;
   padding: 17px 0;
+  width: 100%;
   strong {
     font-weight: $semibold;
   }
   .active & {
     color: #608000;
+  }
+  .icon, .text {
+    vertical-align: middle;
+  }
+  .icon {
+    margin-right: 5px;
   }
 }
 

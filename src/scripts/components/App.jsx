@@ -3,6 +3,8 @@ import supportIcon from '../../imgs/ico-support.png';
 import mouseIcon from '../../imgs/ico-mouse.png';
 import drmIcon from '../../imgs/ico-drm.png';
 import timeIcon from '../../imgs/ico-time.png';
+import errorIcon from '../../imgs/error.png';
+import checkIcon from '../../imgs/check.png';
 
 class App extends React.Component {
   render() {
@@ -35,7 +37,9 @@ class App extends React.Component {
                 <div className="description">
                   <p><em>Divine Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>
                 </div>
-                <div className="indication active">Below average</div>
+                <div className="indication active display-table">
+                  <div className="display-cell"><img className="icon" src={checkIcon} alt="Active"/><span className="text">Below average</span></div>
+                </div>
               </div>
               <div className="game bd item active">
                 <div className="logo">
@@ -44,7 +48,9 @@ class App extends React.Component {
                 <div className="description">
                   <p><em>Beyond Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>
                 </div>
-                <div className="indication active">Above average <strong>(from $7.67)</strong></div>
+                <div className="indication active display-table">
+                  <div className="display-cell"><img className="icon" src={checkIcon} alt="Active"/><span className="text">Above average <strong>(from $7.67)</strong></span></div>
+                </div>
               </div>
               <div className="game d2 item">
                 <div className="logo">
@@ -53,7 +59,8 @@ class App extends React.Component {
                 <div className="description">
                   <p><em>Divinity 2</em> (preorder, normal price $19.99)<br /><strong>with 9 goodies and 7 language versions</strong></p>
                 </div>
-                <div className="indication">Top supporter <strong>(from $18.31)</strong></div>
+                <div className="indication display-table">
+                  <div className="display-cell"><img className="icon" src={errorIcon} alt="Active"/><span className="text">Top supporter <strong>(from $18.31)</strong></span></div></div>
               </div>
             </div>
           </div>
