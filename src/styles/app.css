@@ -32,6 +32,8 @@ body {
 ul, ol {
   list-style-type: none; }
 
+/* fonts */
+/* padding */
 .no-padding {
   padding: 0 !important; }
 
@@ -154,3 +156,34 @@ body {
 
 .rails {
   flex: 1; }
+
+/* fonts */
+/* padding */
+.bottom {
+  width: 950px !important;
+  padding: 0 30px;
+  height: 100px;
+  margin-top: 60px; }
+
+.section-title {
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center; }
+  .section-title::before, .section-title::after {
+    content: '';
+    background-color: #bfbfbf;
+    height: 1px;
+    flex: 1; }
+  .section-title span {
+    padding: 0 20px; }
+
+.goodies {
+  flex: 2; }
+
+.goals {
+  flex: 1;
+  margin-left: 60px; }
+
+.short {
+  font-weight: 600; }

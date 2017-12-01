@@ -4,7 +4,7 @@ import Goals from "./Goals";
 
 export default function Bottom() {
   return (
-    <section className="bottom flex">
+    <section className="bottom flex container">
       <Goodies />
       <Goals />
     </section>
