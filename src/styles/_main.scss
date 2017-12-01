@@ -33,10 +33,10 @@
     color: #4c4c4c;
     padding: 17px 0;
     width: 100%;
+  }
 
-    .active & {
-      color: #608000;
-    }
+  .indication.active {
+    color: #608000;
   }
 
   .icon, .text {
