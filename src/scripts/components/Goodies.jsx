@@ -17,27 +17,27 @@ export default function Goodies() {
           <div className="description"><p>Over 3 hours of award winning music from all 3 games.</p></div>
         </div>
         <div className="goody">
-          <div className="icon"><img src={soundtracksIcon} alt="2 short stories"/></div>
+          <div className="icon"><img src={storiesIcon} alt="2 short stories"/></div>
           <div className="short"><span>2 short stories</span></div>
           <div className="description"><p>Prequel story for Divine Divinity and Beyond Divinity novella.</p></div>
         </div>
         <div className="goody">
-          <div className="icon"><img src={soundtracksIcon} alt="Divinity 2 - Dev Journal"/></div>
+          <div className="icon"><img src={journalIcon} alt="Divinity 2 - Dev Journal"/></div>
           <div className="short"><span>Divinity 2 - Dev Journal</span></div>
           <div className="description"><p>144 pages long book, detailing story and art of Divinity 2.</p></div>
         </div>
         <div className="goody">
-          <div className="icon"><img src={soundtracksIcon} alt="Making of Divinity 2"/></div>
+          <div className="icon"><img src={makingOfIcon} alt="Making of Divinity 2"/></div>
           <div className="short"><span>Making of Divinity 2</span></div>
           <div className="description"><p>40 minutes long, profesional documentary about the development of Divinity 2.</p></div>
         </div>
         <div className="goody">
-          <div className="icon"><img src={soundtracksIcon} alt="7 wallpapers"/></div>
+          <div className="icon"><img src={wallpapersIcon} alt="7 wallpapers"/></div>
           <div className="short"><span>7 wallpapers</span></div>
           <div className="description"><p>Beatifull, hand crafted HD wallpepers with Divine, Beyond and Divinity 2 art.</p></div>
         </div>
         <div className="goody">
-          <div className="icon"><img src={soundtracksIcon} alt="...and more"/></div>
+          <div className="icon"><img src={moreIcon} alt="...and more"/></div>
           <div className="short"><span>...and more</span></div>
           <div className="description"><p>3 manuals, 56 artworks, 5 avatars, Beyond Divinity game-guide.</p></div>
         </div>
