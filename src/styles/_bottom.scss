@@ -65,17 +65,18 @@
 }
 
 .digit {
-  border: 1px solid #999999;
   color: #ffffff;
   font-family: "DS-Digital", sans-serif;
   font-weight: $bold;
   font-size: 40px;
-  line-height: 38px;
-  padding: 0 4px;
+  line-height: 40px;
+  padding: 0 5px;
   position: relative;
   border-radius: 2px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
-  box-shadow: 0 1px 0 0 #f6f6f6;
+  box-shadow:
+    inset 0 0 0 1px #999999,
+    0 1px 0 0 #f6f6f6;
   background: #a6a6a6;
   background:
     linear-gradient(180deg, rgb(166, 166, 166) 0%, rgb(191, 191, 191) 100%);
