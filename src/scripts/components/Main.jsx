@@ -1,6 +1,12 @@
 import React from 'react';
 import errorIcon from '../../imgs/error.png';
 import checkIcon from '../../imgs/check.png';
+import ddIcon from '../../imgs/dd.png';
+import ddInactiveIcon from '../../imgs/dd-inactive.png';
+import bdIcon from '../../imgs/bd.png';
+import bdInactiveIcon from '../../imgs/bd-inactive.png';
+import d2Icon from '../../imgs/d2.png';
+import d2InactiveIcon from '../../imgs/d2-inactive.png';
 
 export default function Main() {
   return (
@@ -8,20 +14,19 @@ export default function Main() {
       <div className="games padding30">
         <div className="flex">
           <div className="game dd item active">
-            <div className="logo">
-              <img src="" alt=""/>
+            <div className="logo display-table">
+              <div className="display-cell">
+                <img className="primary" src={ddIcon} alt="" />
+                <img className="secondary" src={ddInactiveIcon} alt=""/>
+              </div>
             </div>
             <div className="description">
               <p><em>Divine Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>
             </div>
-            <div className="indication active display-table">
-              <div className="display-cell"><img className="icon" src={checkIcon} alt="Active"/><span className="text">Below average</span></div>
-            </div>
+            <div className="indication active display-table"><div className="display-cell"><img className="icon" src={checkIcon} alt="Active"/><span className="text">Below average</span></div></div>
           </div>
           <div className="game bd item active">
-            <div className="logo">
-              <img src="" alt=""/>
-            </div>
+            <div className="logo display-table"><div className="display-cell"><img className="primary" src={bdIcon} alt=""/><img className="secondary" src={bdInactiveIcon} alt=""/></div></div>
             <div className="description">
               <p><em>Beyond Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>
             </div>
@@ -30,9 +35,7 @@ export default function Main() {
             </div>
           </div>
           <div className="game d2 item">
-            <div className="logo">
-              <img src="" alt=""/>
-            </div>
+            <div className="logo display-table"><div className="display-cell"><img className="primary" src={d2Icon} alt=""/><img className="secondary" src={d2InactiveIcon} alt=""/></div></div>
             <div className="description">
               <p><em>Divinity 2</em> (preorder, normal price $19.99)<br /><strong>with 9 goodies and 7 language versions</strong></p>
             </div>

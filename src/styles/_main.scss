@@ -12,10 +12,41 @@
   .games {
     text-align: center;
     padding-bottom: 16px;
+    padding-top: 25px;
   }
 
   .game:not(:first-child) {
     margin-left: 25px;
+  }
+
+  .logo {
+    height: 140px;
+    width: 100%;
+  }
+
+  .logo .display-cell {
+    vertical-align: middle;
+  }
+
+  .logo img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .logo img.secondary {
+    display: block;
+  }
+
+  .logo img.primary {
+    display: none;
+  }
+
+  .active .logo img.primary {
+    display: block;
+  }
+
+  .active .logo img.secondary {
+    display: none;
   }
 
   .description {

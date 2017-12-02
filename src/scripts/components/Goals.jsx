@@ -1,5 +1,4 @@
 import React  from 'react';
-import PropTypes  from 'prop-types';
 import thumbnail from '../../imgs/thumbnail.jpg';
 import left from '../../imgs/left.png';
 import right from '../../imgs/right.png';
@@ -64,7 +63,3 @@ function Progress(props) {
     </svg>
   );
 }
-
-Goals.propTypes = {
-  progress: PropTypes.number.isRequired
-};
