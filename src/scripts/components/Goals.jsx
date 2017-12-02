@@ -14,6 +14,10 @@ export default function Goals() {
           <div className="digit">6</div>
         </div>
       </div>
+      <div className="in-progress">
+        <div className="short">Reach 25.000...</div>
+        <div className="description">...to unlock exclusive, never before seen, trailer from Divinity: Original Sin.</div>
+      </div>
     </div>
   );
 }

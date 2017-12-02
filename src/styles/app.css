@@ -236,3 +236,6 @@ body {
   background: #9b9b9b;
   box-shadow: 0 1px 0 0 #f6f6f6;
   display: table-cell; }
+
+.in-progress {
+  margin-top: 20px; }
