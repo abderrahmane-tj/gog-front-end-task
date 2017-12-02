@@ -4,10 +4,6 @@
   width: $containerWidth !important;
   padding: 0 $containerPadding;
   margin-top: 60px;
-
-  .description {
-    margin-top: 5px;
-  }
 }
 
 .goodies {
@@ -15,6 +11,9 @@
   .wrapper {
     display: flex;
     flex-flow: row wrap;
+  }
+  .description {
+    margin-top: 5px;
   }
 }
 
@@ -52,7 +51,6 @@
 
 .goals {
   flex: 1;
-  overflow: hidden;
   margin-left: 60px;
   text-align: center;
 }
@@ -117,7 +115,9 @@
   margin: 12px auto 0;
   width: 260px;
   position: relative;
+}
 
+.step {
   img {
     width: 100%;
     display: block;
@@ -134,7 +134,7 @@
   background: rgba(0, 0, 0, 0.40);
   box-shadow:
     inset 0 0 0 7px #ffffff,
-    1px 0 5px 0 rgba(0, 0, 0, 0.45);
+    0 1px 5px 0 rgba(0, 0, 0, 0.45);
 }
 
 .step:not(.active) {
@@ -156,6 +156,7 @@
     background: #cbcbcb;
     cursor: pointer;
     &.active {
+      font-weight: $bold;
       box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.25);
       background:
         linear-gradient(180deg, rgb(166, 166, 166) 0%, rgb(217, 217, 217) 100%);
@@ -163,5 +164,17 @@
   }
   .button:not(:first-child) {
     border-left: 1px solid #a6a6a6;
+  }
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  &.left {
+    left: -38px;
+  }
+  &.right {
+    right: -38px;
   }
 }

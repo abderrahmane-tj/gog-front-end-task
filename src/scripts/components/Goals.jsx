@@ -1,5 +1,7 @@
 import React  from 'react';
 import thumbnail from '../../imgs/thumbnail.jpg';
+import left from '../../imgs/left.png';
+import right from '../../imgs/right.png';
 
 export default function Goals() {
   return (
@@ -24,6 +26,8 @@ export default function Goals() {
         <div className="step active"><img src={thumbnail} alt=""/></div>
         <div className="step"><img src={thumbnail} alt=""/></div>
         <div className="step"><img src={thumbnail} alt=""/></div>
+        <div className="control left"><img src={left} alt=""/></div>
+        <div className="control right"><img src={right} alt=""/></div>
       </div>
       <div className="buttons-switcher flex">
         <div className="button"><span>✔</span></div>
