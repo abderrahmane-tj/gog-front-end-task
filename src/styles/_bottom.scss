@@ -155,6 +155,9 @@
     color: #666666;
     background: #cbcbcb;
     cursor: pointer;
+    img {
+      vertical-align: middle;
+    }
     &.active {
       font-weight: $bold;
       box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.25);

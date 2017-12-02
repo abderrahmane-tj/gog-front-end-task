@@ -2,6 +2,7 @@ import React  from 'react';
 import thumbnail from '../../imgs/thumbnail.jpg';
 import left from '../../imgs/left.png';
 import right from '../../imgs/right.png';
+import switcherCheck from '../../imgs/switcher-check.png';
 
 export default function Goals() {
   return (
@@ -30,7 +31,7 @@ export default function Goals() {
         <div className="control right"><img src={right} alt=""/></div>
       </div>
       <div className="buttons-switcher flex">
-        <div className="button"><span>✔</span></div>
+        <div className="button"><span><img src={switcherCheck} alt=""/></span></div>
         <div className="button active"><span>25.000</span></div>
         <div className="button"><span>50.000</span></div>
         <div className="button"><span>80.000</span></div>
