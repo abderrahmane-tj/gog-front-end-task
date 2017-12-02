@@ -52,6 +52,7 @@
 
 .goals {
   flex: 1;
+  overflow: hidden;
   margin-left: 60px;
   text-align: center;
 }
@@ -110,4 +111,32 @@
 
 .in-progress {
   margin-top: 20px;
+}
+
+.switcher {
+  margin: 12px auto 0;
+  width: 260px;
+  position: relative;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.switcher::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.40);
+  box-shadow:
+    inset 0 0 0 7px #ffffff,
+    1px 0 5px 0 rgba(0, 0, 0, 0.45);
+}
+
+.step:not(.active) {
+  display: none;
 }

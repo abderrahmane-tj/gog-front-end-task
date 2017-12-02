@@ -1,4 +1,6 @@
 import React  from 'react';
+import thumbnail from '../../imgs/thumbnail.jpg';
+
 export default function Goals() {
   return (
     <div className="goals">
@@ -17,6 +19,11 @@ export default function Goals() {
       <div className="in-progress">
         <div className="short">Reach 25.000...</div>
         <div className="description">...to unlock exclusive, never before seen, trailer from Divinity: Original Sin.</div>
+      </div>
+      <div className="switcher">
+        <div className="step active"><img src={thumbnail} alt=""/></div>
+        <div className="step"><img src={thumbnail} alt=""/></div>
+        <div className="step"><img src={thumbnail} alt=""/></div>
       </div>
     </div>
   );
