@@ -210,7 +210,7 @@ body {
   line-height: 40px;
   padding: 0 5px;
   position: relative;
-  border-radius: 2px;
+  border-radius: 3px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   box-shadow: inset 0 0 0 1px #999999, 0 1px 0 0 #f6f6f6;
   background: #a6a6a6;
@@ -261,3 +261,23 @@ body {
 
 .step:not(.active) {
   display: none; }
+
+.buttons-switcher {
+  text-align: center;
+  width: 260px;
+  margin: 12px auto 0;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  font-size: 10px;
+  line-height: 20px;
+  box-shadow: 0 1px 0 0 #f6f6f6; }
+  .buttons-switcher .button {
+    flex: 1;
+    color: #666666;
+    background: #cbcbcb;
+    cursor: pointer; }
+    .buttons-switcher .button.active {
+      box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.25);
+      background: linear-gradient(180deg, #a6a6a6 0%, #d9d9d9 100%); }
+  .buttons-switcher .button:not(:first-child) {
+    border-left: 1px solid #a6a6a6; }

@@ -25,6 +25,13 @@ export default function Goals() {
         <div className="step"><img src={thumbnail} alt=""/></div>
         <div className="step"><img src={thumbnail} alt=""/></div>
       </div>
+      <div className="buttons-switcher flex">
+        <div className="button"><span>✔</span></div>
+        <div className="button active"><span>25.000</span></div>
+        <div className="button"><span>50.000</span></div>
+        <div className="button"><span>80.000</span></div>
+        <div className="button"><span>120.000</span></div>
+      </div>
     </div>
   );
 }
