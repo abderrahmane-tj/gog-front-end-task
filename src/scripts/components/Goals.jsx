@@ -1,4 +1,5 @@
 import React  from 'react';
+import PropTypes  from 'prop-types';
 import thumbnail from '../../imgs/thumbnail.jpg';
 import left from '../../imgs/left.png';
 import right from '../../imgs/right.png';
@@ -29,6 +30,8 @@ export default function Goals() {
         <div className="step"><img src={thumbnail} alt=""/></div>
         <div className="control left"><img src={left} alt=""/></div>
         <div className="control right"><img src={right} alt=""/></div>
+        <div className="progress-text">90%</div>
+        <Progress progress={90} />
       </div>
       <div className="buttons-switcher flex">
         <div className="button"><span><img src={switcherCheck} alt=""/></span></div>
@@ -40,3 +43,28 @@ export default function Goals() {
     </div>
   );
 }
+
+function Progress(props) {
+  const {progress} = props;
+  let strokeTotalLength = 228.9658;
+  let ratio = strokeTotalLength / 100;
+  let offset = strokeTotalLength - (progress * ratio);
+
+  return (
+    <svg version="1.1" id="disc" className="progress"
+         x="0px" y="0px" width="80px" height="80px"
+         viewBox="0 0 80 80">
+      <circle
+        cx="40" cy="40" r="36.5" fill="none" stroke="#FFFFFF"
+        strokeWidth="7" strokeMiterlimit="10"
+        strokeDasharray={strokeTotalLength}
+        strokeDashoffset={offset}
+        transform='rotate(-90 40 40)'
+      />
+    </svg>
+  );
+}
+
+Goals.propTypes = {
+  progress: PropTypes.number.isRequired
+};

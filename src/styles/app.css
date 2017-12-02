@@ -245,6 +245,28 @@ body {
   width: 260px;
   position: relative; }
 
+.progress-text {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 80px;
+  position: absolute;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  width: 83px;
+  height: 83px;
+  border-radius: 83px;
+  transform: translate(-50%, -50%); }
+
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%); }
+
 .step img {
   width: 100%;
   display: block; }
@@ -276,6 +298,8 @@ body {
     color: #666666;
     background: #cbcbcb;
     cursor: pointer; }
+    .buttons-switcher .button img {
+      vertical-align: middle; }
     .buttons-switcher .button.active {
       font-weight: 700;
       box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.25);
