@@ -37,3 +37,7 @@
 .regular {
   font-weight: $regular;
 }
+
+.dragging {
+  user-select: none;
+}

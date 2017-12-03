@@ -7,7 +7,9 @@ import switcherCheck from '../../imgs/switcher-check.png';
 export default function Goals() {
   return (
     <div className="goals">
-      <div className="section-title"><span>Games sold so far</span></div>
+      <div className="section-title">
+        <span>Games sold so far</span>
+      </div>
       <div className="games-sold">
         <div className="number">
           <div className="digit">0</div>
@@ -33,7 +35,9 @@ export default function Goals() {
         <Progress progress={90} />
       </div>
       <div className="buttons-switcher flex">
-        <div className="button"><span><img src={switcherCheck} alt=""/></span></div>
+        <div className="button">
+          <span><img src={switcherCheck} alt=""/></span>
+        </div>
         <div className="button active"><span>25.000</span></div>
         <div className="button"><span>50.000</span></div>
         <div className="button"><span>80.000</span></div>

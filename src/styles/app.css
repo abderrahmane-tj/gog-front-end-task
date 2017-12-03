@@ -63,6 +63,9 @@ ul, ol {
 .regular {
   font-weight: 400; }
 
+.dragging {
+  user-select: none; }
+
 body {
   background: url(../imgs/background-pattern.png), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(212, 212, 212, 0) 100%) no-repeat; }
 
@@ -203,7 +206,7 @@ body {
   background: linear-gradient(180deg, #c2c2c2 0%, #cfcfcf 100%); }
 
 .front-rails {
-  width: 20%;
+  width: 10%;
   border: 1px solid #5e7f00;
   box-shadow: inset 0 1px 1px rgba(231, 255, 0, 0.65), inset 0 0 5px rgba(255, 255, 190, 0.26);
   background: #7ca900;
@@ -211,7 +214,7 @@ body {
 
 .handle-wrapper {
   position: absolute;
-  left: 20%; }
+  left: 10%; }
 
 .handle {
   position: relative;
