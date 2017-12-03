@@ -49,12 +49,12 @@
 
 .handle-wrapper {
   position: absolute;
-  left: 400px;
+  left: 20%;
 }
 
 .handle {
   position: relative;
-  transform: translateY(-18%);
+  transform: translateY(-18%) translateX(-50%);
 }
 
 .handle-shape {

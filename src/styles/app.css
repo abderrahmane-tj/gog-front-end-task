@@ -211,11 +211,11 @@ body {
 
 .handle-wrapper {
   position: absolute;
-  left: 400px; }
+  left: 20%; }
 
 .handle {
   position: relative;
-  transform: translateY(-18%); }
+  transform: translateY(-18%) translateX(-50%); }
 
 .handle-shape {
   position: relative;
@@ -250,7 +250,7 @@ body {
   background: #c8c8c8;
   background: linear-gradient(180deg, #c2c2c2 0%, #cfcfcf 100%);
   box-shadow: 0 0 0 1px #b2b2b2, 0 1px 0 1px rgba(255, 255, 255, 0.75);
-  border-radius: 7px;
+  border-radius: 5px;
   padding: 10px;
   text-shadow: 0 1px rgba(255, 255, 255, 0.35); }
 
