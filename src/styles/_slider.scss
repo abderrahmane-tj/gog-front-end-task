@@ -1,0 +1,31 @@
+@import "variables";
+
+.slider {
+  display: flex;
+  padding-top: 40px;
+}
+
+.indicator {
+  color: #4c4c4c;
+  font-weight: $semibold;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.rails {
+  flex: 1;
+  background: #cdcdcd;
+  border-radius: 12px;
+  height: 14px;
+  margin: 0 10px;
+  border: 1px solid #aaaaaa;
+}
+
+.handle {
+  position: relative;
+
+  .tooltip {
+    position: absolute;
+    left: 400px;
+  }
+}
