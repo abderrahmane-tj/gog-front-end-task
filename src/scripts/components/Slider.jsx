@@ -1,4 +1,5 @@
 import React from 'react';
+import 'core-js/fn/number/is-nan';
 import infoIcon from '../../imgs/ico-info.png';
 import {clamp, twoDecimals} from "../helpers/functions";
 
@@ -9,6 +10,9 @@ export default class Slider extends React.Component {
   max = 49.99;
 
   handleMouseDown = (e) => {
+    if(this.tooltipWrapper.contains(e.target)) {
+      return;
+    }
     this.dragStart = e.clientX;
     document.addEventListener('mousemove', this.handleMouseMove);
     document.addEventListener('mouseup', this.handleMouseUp);
@@ -19,12 +23,12 @@ export default class Slider extends React.Component {
     this.updateUIPosition(this.position + this.distance(e.clientX));
   };
 
-  updateUIPosition(position) {
+  updateUIPosition(position, inputValue) {
     let clampedPosition = clamp(position, 0, 100);
-    this.handle.style.left = clampedPosition + '%';
+    this.handleWrapper.style.left = clampedPosition + '%';
     this.frontRails.style.width = clampedPosition + '%';
     let price = (this.max - this.min) * clampedPosition / 100 + this.min;
-    this.input.innerText = twoDecimals(price);
+    this.input.value = inputValue ? inputValue : twoDecimals(price);
 
     let minIwidth = this.minIndicator.offsetWidth;
     let maxIwidth = this.maxIndicator.offsetWidth;
@@ -63,6 +67,22 @@ export default class Slider extends React.Component {
     document.body.classList.remove('dragging');
   };
 
+  handlePriceChange = (e) => {
+    let original = e.target.value;
+    let value = parseFloat(original);
+
+    if(isNaN(value)
+      || (original.length && original[original.length-1] === '.')) {
+      return;
+    }
+
+    let newValue = clamp(value, this.min, this.max);
+    let position = 100 * (newValue - this.min) / (this.max - this.min);
+    this.position = position;
+
+    this.updateUIPosition(position, newValue);
+  };
+
   distance(mouseX) {
     let railsWidth = this.rails.offsetWidth;
     let movementX = mouseX - this.dragStart;
@@ -86,21 +106,31 @@ export default class Slider extends React.Component {
           <div className="front-rails" ref={e => this.frontRails = e} />
           <div
             className="handle-wrapper"
-            ref={e => this.handle = e}
+            ref={e => this.handleWrapper = e}
           >
             <div
               className="handle"
               onMouseDown={this.handleMouseDown}
             >
               <HandleShape />
-              <div className="tooltip-wrapper">
+              <div
+                className="tooltip-wrapper"
+                ref={e => this.tooltipWrapper = e}
+              >
                 <div
                   className="tooltip"
                   ref={e => this.tooltip = e}
                 >
                   <div className="arrow-up" />
                   <div className="bubble flex" ref={e => this.bubble = e}>
-                    <div className="price">$<span ref={e => this.input = e} className="input">14.99</span></div>
+                    <div className="price flex">
+                      <span>$</span>
+                      <input
+                        type="text" ref={e => this.input = e}
+                        className="input"
+                        onChange={this.handlePriceChange}
+                      />
+                    </div>
                     <div className="checkout">Checkout now</div>
                   </div>
                   <div

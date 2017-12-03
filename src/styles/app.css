@@ -264,6 +264,20 @@ body {
   font-weight: 700;
   color: #698c00; }
 
+.input {
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 700;
+  color: #698c00;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  white-space: normal;
+  box-sizing: content-box;
+  width: 100%; }
+
 .checkout {
   flex: 1;
   color: #1a2b18;
