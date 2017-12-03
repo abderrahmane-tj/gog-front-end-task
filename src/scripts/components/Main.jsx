@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import errorIcon from '../../imgs/error.png';
 import checkIcon from '../../imgs/check.png';
+import infoIcon from '../../imgs/ico-info.png';
 import ddIcon from '../../imgs/dd.png';
 import ddInactiveIcon from '../../imgs/dd-inactive.png';
 import bdIcon from '../../imgs/bd.png';
@@ -46,14 +47,24 @@ export default function Main() {
           <div className="rails">
             <div className="back-rails" />
             <div className="front-rails" />
-            <div className="handle">
-              <div className="tooltip">
-                <div className="bubble">
-                  <div className="input">$14.99</div>
-                  <div className="checkout">Checkout now</div>
+            <div className="handle-wrapper">
+              <div className="handle">
+                <HandleShape />
+                <div className="tooltip-wrapper">
+                  <div className="tooltip">
+                    <div className="arrow-up" />
+                    <div className="bubble flex">
+                      <div className="price">$<span className="input">14.99</span></div>
+                      <div className="checkout">Checkout now</div>
+                    </div>
+                    <div className="info display-table">
+                      <div className="display-cell">
+                        <img src={infoIcon} alt=""/>
+                        <span className="info-icon">Click the price to type it in manually</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="info"><span className="info-icon"
-                >Click the price to type it in manually</span></div>
               </div>
             </div>
           </div>
@@ -84,5 +95,16 @@ function Game(props) {
           />{indication}</div>
       </div>
     </div>
+  );
+}
+
+function HandleShape() {
+  return (
+    <svg version="1.1" id="handle" className="handle-shape"
+       width="15px" height="30px" viewBox="0 0 15 30" enableBackground="new 0 0 15 30">
+      <polygon fill="#E1E1E1" stroke="#9C9C9C" strokeMiterlimit="10" points="14.5,22 7.5,29.25 0.5,22 0.5,0.5 14.5,0.5 "/>
+      <path fill="#E1E1E1" stroke="#9C9C9C" strokeMiterlimit="10" d="M14.5,22"/>
+      <path fill="#E1E1E1" stroke="#9C9C9C" strokeMiterlimit="10" d="M0.5,22"/>
+    </svg>
   );
 }
