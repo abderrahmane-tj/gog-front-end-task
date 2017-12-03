@@ -11,8 +11,9 @@
 
   .games {
     text-align: center;
-    padding-bottom: 16px;
-    padding-top: 25px;
+    padding-bottom: 14px;
+    padding-top: 10px;
+    background: url(../imgs/games-background.png) top center no-repeat;
   }
 
   .game:not(:first-child) {
@@ -50,7 +51,7 @@
   }
 
   .description {
-    padding: 13px 0;
+    padding: 10px 0;
 
     em {
       display: inline-block;
