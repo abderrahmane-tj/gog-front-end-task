@@ -156,7 +156,7 @@ body {
     color: #4c4c4c;
     padding: 17px 0;
     width: 100%; }
-  .main .indication.active {
+  .main .active .indication {
     color: #608000; }
   .main .icon, .main .text {
     vertical-align: middle; }
