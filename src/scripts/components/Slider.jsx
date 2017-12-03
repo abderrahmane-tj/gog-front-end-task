@@ -1,9 +1,12 @@
 import React from 'react';
 import infoIcon from '../../imgs/ico-info.png';
+import {clamp, twoDecimals} from "../helpers/functions";
 
 export default class Slider extends React.Component {
   dragStart = null;
   position = 10;
+  min = 0.99;
+  max = 49.99;
 
   handleMouseDown = (e) => {
     this.dragStart = e.clientX;
@@ -13,15 +16,47 @@ export default class Slider extends React.Component {
   };
 
   handleMouseMove = (e) => {
-    this.handle.style.left =
-      this.position + this.distance(e.clientX) + '%';
+    this.updateUIPosition(this.position + this.distance(e.clientX));
   };
 
-  handleMouseUp = (e) => {
-    let distance = this.distance(e.clientX);
-    this.position += distance;
+  updateUIPosition(position) {
+    let clampedPosition = clamp(position, 0, 100);
+    this.handle.style.left = clampedPosition + '%';
+    this.frontRails.style.width = clampedPosition + '%';
+    let price = (this.max - this.min) * clampedPosition / 100 + this.min;
+    this.input.innerText = twoDecimals(price);
 
-    console.log(distance, this.position);
+    let minIwidth = this.minIndicator.offsetWidth;
+    let maxIwidth = this.maxIndicator.offsetWidth;
+    let railsWidth = this.rails.offsetWidth;
+    let frontWidth = railsWidth * clampedPosition / 100;
+    let tooltipWidth = this.tooltip.offsetWidth;
+
+    let tooltipOffset;
+    let halfTooltip = tooltipWidth / 2;
+    let minDistance = frontWidth + minIwidth + 10 - halfTooltip;
+    let maxDistance = frontWidth + halfTooltip - (railsWidth + 10 + maxIwidth);
+    if(minDistance < 0) {
+      tooltipOffset = -minDistance;
+      this.bubble.style.left = tooltipOffset + 'px';
+      this.info.style.left = tooltipOffset + 'px';
+    } else if(maxDistance > 0) {
+      tooltipOffset = maxDistance;
+      this.bubble.style.right = tooltipOffset + 'px';
+      this.info.style.right = tooltipOffset + 'px';
+    } else {
+      this.bubble.style.left = 'auto';
+      this.info.style.left = 'auto';
+      this.bubble.style.right = 'auto';
+      this.info.style.right = 'auto';
+    }
+
+  }
+
+  handleMouseUp = (e) => {
+    this.position = clamp(
+      this.position + this.distance(e.clientX)
+      , 0, 100);
 
     document.removeEventListener('mousemove', this.handleMouseMove);
     document.removeEventListener('mouseup', this.handleMouseUp);
@@ -36,13 +71,16 @@ export default class Slider extends React.Component {
   }
 
   componentDidMount(){
-    // this.handle.
+    this.updateUIPosition(this.position);
   }
 
   render() {
     return (
       <div className="slider">
-        <div className="minumum indicator">$0.99</div>
+        <div
+          className="minumum indicator"
+          ref={e => this.minIndicator = e}
+        >${this.min}</div>
         <div className="rails">
           <div className="back-rails" ref={e => this.rails = e} />
           <div className="front-rails" ref={e => this.frontRails = e} />
@@ -61,11 +99,14 @@ export default class Slider extends React.Component {
                   ref={e => this.tooltip = e}
                 >
                   <div className="arrow-up" />
-                  <div className="bubble flex">
-                    <div className="price">$<span className="input">14.99</span></div>
+                  <div className="bubble flex" ref={e => this.bubble = e}>
+                    <div className="price">$<span ref={e => this.input = e} className="input">14.99</span></div>
                     <div className="checkout">Checkout now</div>
                   </div>
-                  <div className="info display-table">
+                  <div
+                    className="info display-table"
+                    ref={e => this.info = e}
+                  >
                     <div className="display-cell">
                       <img src={infoIcon} alt=""/>
                       <span className="info-icon">Click the price to type it in manually</span>
@@ -76,7 +117,10 @@ export default class Slider extends React.Component {
             </div>
           </div>
         </div>
-        <div className="maximum indicator">$49.99</div>
+        <div
+          ref={e => this.maxIndicator = e}
+          className="maximum indicator"
+        >${this.max}</div>
       </div>
     );
   }

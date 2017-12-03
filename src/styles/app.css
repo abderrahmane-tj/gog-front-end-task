@@ -250,6 +250,7 @@ body {
   transform: translateX(-50%); }
 
 .bubble {
+  position: relative;
   background: #c8c8c8;
   background: linear-gradient(180deg, #c2c2c2 0%, #cfcfcf 100%);
   box-shadow: 0 0 0 1px #b2b2b2, 0 1px 0 1px rgba(255, 255, 255, 0.75);
@@ -276,6 +277,7 @@ body {
   box-shadow: 0 0 0 1px rgba(59, 59, 59, 0.5); }
 
 .info {
+  position: relative;
   margin-top: 5px;
   font-size: 10px;
   color: #808080; }
