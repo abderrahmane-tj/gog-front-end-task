@@ -102,6 +102,8 @@ export default class Slider extends React.Component {
           ref={e => this.minIndicator = e}
         >${this.min}</div>
         <div className="rails">
+          <div className="point" style={{left: '20%'}}/>
+          <div className="point" style={{left: '40%'}}/>
           <div className="back-rails" ref={e => this.rails = e} />
           <div className="front-rails" ref={e => this.frontRails = e} />
           <div

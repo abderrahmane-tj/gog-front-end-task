@@ -193,6 +193,18 @@ body {
   margin: 0 10px;
   position: relative; }
 
+.point {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #777777;
+  border: 1px solid #606060;
+  border-radius: 6px;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.35); }
+
 .back-rails, .front-rails {
   position: absolute;
   height: 100%;
@@ -214,6 +226,7 @@ body {
 
 .handle-wrapper {
   position: absolute;
+  z-index: 20;
   left: 10%; }
 
 .handle {
@@ -222,7 +235,7 @@ body {
 
 .handle-shape {
   position: relative;
-  z-index: 10; }
+  z-index: 15; }
 
 .tooltip-wrapper {
   position: relative; }
@@ -237,11 +250,11 @@ body {
   border-left: 7.5px solid transparent;
   border-right: 7.5px solid transparent;
   border-bottom: 7.5px solid #c8c8c8;
-  z-index: 9; }
+  z-index: 10; }
 
 .tooltip {
   position: absolute;
-  z-index: 9;
+  z-index: 10;
   top: 0;
   left: 50%;
   height: 60px;
