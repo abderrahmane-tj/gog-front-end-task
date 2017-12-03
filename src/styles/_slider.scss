@@ -14,11 +14,18 @@
 
 .rails {
   flex: 1;
-  background: #cdcdcd;
-  border-radius: 12px;
   height: 14px;
   margin: 0 10px;
+  position: relative;
+}
+
+.back-rails {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
   border: 1px solid #aaaaaa;
+  background: #cdcdcd;
 }
 
 .handle {

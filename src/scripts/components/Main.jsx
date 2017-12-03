@@ -44,6 +44,8 @@ export default function Main() {
         <div className="slider">
           <div className="minumum indicator">$0.99</div>
           <div className="rails">
+            <div className="back-rails" />
+            <div className="front-rails" />
             <div className="handle">
               <div className="tooltip">
                 <div className="bubble">
