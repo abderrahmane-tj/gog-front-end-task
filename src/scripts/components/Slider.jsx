@@ -13,7 +13,7 @@ export default class Slider extends React.Component {
   constructor(props) {
     super(props);
     this.position =
-      100 * (props.checkPoints[0].value - this.min) / (this.max - this.min);
+      100 * (props.checkPoints[1].value - this.min) / (this.max - this.min);
 
   }
 
