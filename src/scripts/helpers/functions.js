@@ -19,3 +19,9 @@ export function addDot(number) {
   dotted.splice(3, 0, '.');
   return dotted.reverse();
 }
+
+export function pad(num, size) {
+  let s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
+}

@@ -5,7 +5,7 @@ import left from '../../imgs/left.png';
 import right from '../../imgs/right.png';
 import play from '../../imgs/play.png';
 import switcherCheck from '../../imgs/switcher-check.png';
-import {addDot, clamp} from "../helpers/functions";
+import {addDot, clamp, pad} from "../helpers/functions";
 
 export default class Goals extends React.Component {
   steps = [
@@ -159,7 +159,7 @@ function Progress(props) {
 }
 
 function Sold(props) {
-  let sold = addDot(props.sold);
+  let sold = addDot(pad(props.sold, 6));
   return (
     <div className="games-sold">
       <div className="number">
