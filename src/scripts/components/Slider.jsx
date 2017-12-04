@@ -36,7 +36,7 @@ export default class Slider extends React.Component {
     this.handleWrapper.style.left = clampedPosition + '%';
     this.frontRails.style.width = clampedPosition + '%';
     let price = (this.max - this.min) * clampedPosition / 100 + this.min;
-    let newValue = inputValue ? inputValue : twoDecimals(price)
+    let newValue = inputValue ? inputValue : twoDecimals(price);
     this.input.value = newValue;
 
     let minIwidth = this.minIndicator.offsetWidth;
@@ -88,10 +88,11 @@ export default class Slider extends React.Component {
       return;
     }
 
-    let newValue = clamp(value, this.min, this.max);
-    let position = 100 * (newValue - this.min) / (this.max - this.min);
+    let position =
+      100 * (clamp(value, this.min, this.max) - this.min)
+      / (this.max - this.min);
     this.position = position;
-
+    let newValue = value < this.min ? this.min : value;
     this.updateUIPosition(position, newValue);
   };
 
