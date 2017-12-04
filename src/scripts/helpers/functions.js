@@ -13,3 +13,9 @@ export function clamp(number, min, max){
       )
   );
 }
+
+export function addDot(number) {
+  let dotted = number.toString().split('').reverse();
+  dotted.splice(3, 0, '.');
+  return dotted.reverse();
+}

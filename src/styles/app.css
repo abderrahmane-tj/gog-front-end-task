@@ -432,6 +432,9 @@ body {
   height: 83px;
   border-radius: 83px;
   transform: translate(-50%, -50%); }
+  .progress-text img {
+    vertical-align: middle;
+    margin-left: 7px; }
 
 .progress {
   position: absolute;
@@ -454,9 +457,6 @@ body {
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 0 0 7px #ffffff, 0 1px 5px 0 rgba(0, 0, 0, 0.45); }
-
-.step:not(.active) {
-  display: none; }
 
 .buttons-switcher {
   text-align: center;

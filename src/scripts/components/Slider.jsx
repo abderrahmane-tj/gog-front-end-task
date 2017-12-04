@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'core-js/fn/number/is-nan';
 import infoIcon from '../../imgs/ico-info.png';
 import {clamp, twoDecimals} from "../helpers/functions";
 
