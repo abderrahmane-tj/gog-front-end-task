@@ -4,11 +4,11 @@
 
 - `$ git clone https://Abderrahmane_TJ@bitbucket.org/Abderrahmane_TJ/gog-front-end-task.git`
 - `$ cd gog-front-end-task`
-- `$ yarn install`
+- `$ yarn install` or `$ npm install` 
 
 ## Usage
 
-- `$ yarn start` or `$ yarn start`
+- `$ yarn start` or `$ npm run start`
 
 ## Notes
 
