@@ -6,9 +6,16 @@ import {clamp, twoDecimals} from "../helpers/functions";
 
 export default class Slider extends React.Component {
   dragStart = null;
-  position = 10;
+  position;
   min = 0.99;
   max = 49.99;
+
+  constructor(props) {
+    super(props);
+    this.position =
+      100 * (props.checkPoints[0].value - this.min) / (this.max - this.min);
+
+  }
 
   handleMouseDown = (e) => {
     if(this.tooltipWrapper.contains(e.target)) {
