@@ -13,5 +13,5 @@
 ## Notes
 
 - I am using the [Create React App](https://github.com/facebookincubator/create-react-app) 
-tool in order to have a modern dev environment with minimum configuration
+tool mainly in order to have a modern dev environment with minimum configuration
 - State updating could use more optimization and deboucing in some places
