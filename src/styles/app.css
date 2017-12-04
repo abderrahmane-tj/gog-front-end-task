@@ -205,6 +205,16 @@ body {
   border-radius: 6px;
   box-shadow: 0 1px rgba(255, 255, 255, 0.35); }
 
+.point-text-wrapper {
+  position: relative; }
+
+.point-text {
+  position: absolute;
+  bottom: 15px;
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%); }
+
 .back-rails, .front-rails {
   position: absolute;
   height: 100%;

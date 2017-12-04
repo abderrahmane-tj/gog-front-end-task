@@ -111,7 +111,13 @@ export default class Slider extends React.Component {
           {checkPoints.map(checkpoint => {
             let value = checkpoint.value;
             let p = 100 * (value - this.min) / (this.max - this.min);
-            return <div key={value} className="point" style={{left: p+'%'}} />;
+            return (
+              <div key={value} className="point" style={{left: p+'%'}}>
+                <div className="point-text-wrapper">
+                  <div className="point-text">$ {checkpoint.value} ({checkpoint.text})</div>
+                </div>
+              </div>
+            );
             }
           )}
 
