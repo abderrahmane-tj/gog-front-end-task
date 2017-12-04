@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import 'core-js/fn/number/is-nan';
 import infoIcon from '../../imgs/ico-info.png';
 import {clamp, twoDecimals} from "../helpers/functions";
@@ -28,7 +29,8 @@ export default class Slider extends React.Component {
     this.handleWrapper.style.left = clampedPosition + '%';
     this.frontRails.style.width = clampedPosition + '%';
     let price = (this.max - this.min) * clampedPosition / 100 + this.min;
-    this.input.value = inputValue ? inputValue : twoDecimals(price);
+    let newValue = inputValue ? inputValue : twoDecimals(price)
+    this.input.value = newValue;
 
     let minIwidth = this.minIndicator.offsetWidth;
     let maxIwidth = this.maxIndicator.offsetWidth;
@@ -55,6 +57,9 @@ export default class Slider extends React.Component {
       this.info.style.right = 'auto';
     }
 
+    if(this.props.onChange) {
+      this.props.onChange(newValue);
+    }
   }
 
   handleMouseUp = (e) => {
@@ -95,6 +100,7 @@ export default class Slider extends React.Component {
   }
 
   render() {
+    const {checkPoints} = this.props;
     return (
       <div className="slider">
         <div
@@ -102,27 +108,23 @@ export default class Slider extends React.Component {
           ref={e => this.minIndicator = e}
         >${this.min}</div>
         <div className="rails">
-          <div className="point" style={{left: '20%'}}/>
-          <div className="point" style={{left: '40%'}}/>
+          {checkPoints.map(checkpoint => {
+            let value = checkpoint.value;
+            let p = 100 * (value - this.min) / (this.max - this.min);
+            return <div key={value} className="point" style={{left: p+'%'}} />;
+            }
+          )}
+
           <div className="back-rails" ref={e => this.rails = e} />
           <div className="front-rails" ref={e => this.frontRails = e} />
-          <div
-            className="handle-wrapper"
-            ref={e => this.handleWrapper = e}
-          >
-            <div
-              className="handle"
-              onMouseDown={this.handleMouseDown}
-            >
+          <div className="handle-wrapper" ref={e => this.handleWrapper = e}>
+            <div className="handle" onMouseDown={this.handleMouseDown}>
               <HandleShape />
               <div
                 className="tooltip-wrapper"
                 ref={e => this.tooltipWrapper = e}
               >
-                <div
-                  className="tooltip"
-                  ref={e => this.tooltip = e}
-                >
+                <div className="tooltip" ref={e => this.tooltip = e}>
                   <div className="arrow-up" />
                   <div className="bubble flex" ref={e => this.bubble = e}>
                     <div className="price flex">
@@ -135,10 +137,7 @@ export default class Slider extends React.Component {
                     </div>
                     <div className="checkout">Checkout now</div>
                   </div>
-                  <div
-                    className="info display-table"
-                    ref={e => this.info = e}
-                  >
+                  <div className="info display-table" ref={e => this.info = e}>
                     <div className="display-cell">
                       <img src={infoIcon} alt=""/>
                       <span className="info-icon">Click the price to type it in manually</span>
@@ -157,6 +156,11 @@ export default class Slider extends React.Component {
     );
   }
 }
+
+Slider.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  checkPoints: PropTypes.array.isRequired
+};
 
 function HandleShape() {
   return (

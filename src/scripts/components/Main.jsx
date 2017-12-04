@@ -10,42 +10,60 @@ import d2Icon from '../../imgs/d2.png';
 import d2InactiveIcon from '../../imgs/d2-inactive.png';
 import Slider from "./Slider";
 
-export default function Main() {
-  return (
-    <main className="main container no-padding">
-      <div className="games padding30">
-        <div className="flex">
-          <Game
-            className="dd"
-            active={true}
-            primary={ddIcon}
-            secondary={ddInactiveIcon}
-            description={<p><em>Divine Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>}
-            indication={<span className="text">Below average</span>}
-          />
-          <Game
-            className="bd"
-            active={true}
-            primary={bdIcon}
-            secondary={bdInactiveIcon}
-            description={<p><em>Beyond Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>}
-            indication={<span className="text">Above average <strong>(from $7.67)</strong></span>}
-          />
-          <Game
-            className="d2"
-            active={false}
-            primary={d2Icon}
-            secondary={d2InactiveIcon}
-            description={<p><em>Divinity 2</em> (preorder, normal price $19.99)<br /><strong>with 9 goodies and 7 language versions</strong></p>}
-            indication={<span className="text">Top supporter <strong>(from $18.31)</strong></span>}
+export default class Main extends React.Component {
+  checkPoints = [
+    {text: 'Average', value: 7.67},
+    {text: 'Top 10%', value: 18.31}
+  ];
+  state = {
+    price: 0
+  };
+
+  handleChange = (price) => {
+    this.setState({ price });
+  };
+
+  render() {
+    const {price} = this.state;
+    return (
+      <main className="main container no-padding">
+        <div className="games padding30">
+          <div className="flex">
+            <Game
+              className="dd"
+              active={true}
+              primary={ddIcon}
+              secondary={ddInactiveIcon}
+              description={<p><em>Divine Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>}
+              indication={<span className="text">Below average</span>}
+            />
+            <Game
+              className="bd"
+              active={price >= this.checkPoints[0].value}
+              primary={bdIcon}
+              secondary={bdInactiveIcon}
+              description={<p><em>Beyond Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>}
+              indication={<span className="text">Above average <strong>(from $7.67)</strong></span>}
+            />
+            <Game
+              className="d2"
+              active={price >= this.checkPoints[1].value}
+              primary={d2Icon}
+              secondary={d2InactiveIcon}
+              description={<p><em>Divinity 2</em> (preorder, normal price $19.99)<br /><strong>with 9 goodies and 7 language versions</strong></p>}
+              indication={<span className="text">Top supporter <strong>(from $18.31)</strong></span>}
+            />
+          </div>
+        </div>
+        <div className="choose-your-price padding30">
+          <Slider
+            checkPoints={this.checkPoints}
+            onChange={this.handleChange}
           />
         </div>
-      </div>
-      <div className="choose-your-price padding30">
-        <Slider/>
-      </div>
-    </main>
-  );
+      </main>
+    );
+  }
 }
 
 function Game(props) {
