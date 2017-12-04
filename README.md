@@ -9,7 +9,7 @@
 ## Usage
 
 - `$ yarn start` or `$ npm run start`
-- Use the debug window (bottom left to update games sold so far)
+- Use the debug window (bottom left) to update games sold so far
 
 ## Notes
 
