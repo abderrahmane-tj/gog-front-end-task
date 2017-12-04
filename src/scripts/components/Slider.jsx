@@ -103,18 +103,28 @@ export default class Slider extends React.Component {
   }
 
   componentDidMount(){
+    const {checkPoints} = this.props;
     this.updateUIPosition(this.position);
+    let valueDistance = checkPoints[1].value - checkPoints[0].value;
+    let percentDistance = valueDistance / (this.max - this.min);
+    if(percentDistance * this.rails.offsetWidth <= 100) {
+      this.narrowWrapper.classList.add('narrow');
+    }
   }
 
   render() {
     const {checkPoints} = this.props;
+
     return (
       <div className="slider">
         <div
           className="minumum indicator"
           ref={e => this.minIndicator = e}
         >${this.min}</div>
-        <div className="rails">
+        <div
+          ref={e => this.narrowWrapper = e}
+          className="rails"
+        >
           {checkPoints.map(checkpoint => {
             let value = checkpoint.value;
             let p = 100 * (value - this.min) / (this.max - this.min);

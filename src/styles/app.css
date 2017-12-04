@@ -233,9 +233,16 @@ body {
 .point-text {
   position: absolute;
   bottom: 15px;
+  font-size: 10px;
   white-space: nowrap;
   left: 50%;
   transform: translateX(-50%); }
+
+.narrow .point:first-child .point-text {
+  bottom: 27px; }
+
+.narrow .point:first-child + .point .point-text {
+  bottom: 13px; }
 
 .back-rails, .front-rails {
   position: absolute;

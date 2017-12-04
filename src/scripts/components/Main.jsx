@@ -12,8 +12,8 @@ import Slider from "./Slider";
 
 export default class Main extends React.Component {
   checkPoints = [
-    {text: 'Average', value: 7.67},
-    {text: 'Top 10%', value: 18.31}
+    {text: 'Average', value: 28.67},
+    {text: 'Top 10%', value: 30.31}
   ];
   state = {
     price: 0
@@ -43,7 +43,7 @@ export default class Main extends React.Component {
               primary={bdIcon}
               secondary={bdInactiveIcon}
               description={<p><em>Beyond Divinity</em> (normal price $5.99)<br /><strong>with 6 goodies and 4 language versions</strong></p>}
-              indication={<span className="text">Above average <strong>(from $7.67)</strong></span>}
+              indication={<span className="text">Above average <strong>(from ${this.checkPoints[0].value})</strong></span>}
             />
             <Game
               className="d2"
@@ -51,7 +51,7 @@ export default class Main extends React.Component {
               primary={d2Icon}
               secondary={d2InactiveIcon}
               description={<p><em>Divinity 2</em> (preorder, normal price $19.99)<br /><strong>with 9 goodies and 7 language versions</strong></p>}
-              indication={<span className="text">Top supporter <strong>(from $18.31)</strong></span>}
+              indication={<span className="text">Top supporter <strong>(from ${this.checkPoints[1].value})</strong></span>}
             />
           </div>
         </div>
