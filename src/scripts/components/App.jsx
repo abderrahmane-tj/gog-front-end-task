@@ -42,7 +42,7 @@ class App extends React.Component {
         <div className="debug">
           <div onClick={this.handleClick} className="title">Debug</div>
           <div className={cx("content", {closed: !debug})}>
-            <label htmlFor="sold">Sold</label>
+            <label htmlFor="sold">Games sold so far</label>
             <input
               ref={e => this.input = e}
               onChange={this.handleChange}
